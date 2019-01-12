@@ -5,5 +5,37 @@
     <%- include('ejs/include/common-styles.ejs') -%>
 </head>
 <body>
+<%- include('blocks/header/header.ejs') -%>
+<%- include('blocks/road-map/road-map.ejs') -%>
+<%- include('blocks/footer/footer.ejs') -%>
+<div class="hand">
+    <img src="images/svg/rock.svg" alt="hand">
+</div>
+<script>
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+    return Math.floor(rect.top - viewportHeight + rect.height < 0)
+  }
+
+  const timeLineItems = document.querySelectorAll('.time-line__item');
+
+  const checkItems = () => {
+    timeLineItems.forEach((stage) => {
+      if (stage.classList.contains('time-line__item--view')) return false;
+
+
+      if (isElementInViewport(stage)) {
+        stage.classList.add('time-line__item--view');
+      }
+    })
+  }
+
+  setTimeout(() => {
+    checkItems();
+    document.addEventListener('scroll', checkItems)
+  }, 1000)
+</script>
 </body>
 </html>

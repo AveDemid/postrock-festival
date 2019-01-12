@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/roboto-condensed/RobotoCondensed-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Bellflower";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/bellflower/Bellflower.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Impact", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/impact/Impact.ttf") format("truetype");
+}
