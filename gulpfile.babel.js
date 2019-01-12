@@ -79,4 +79,8 @@ const imageminTask = () =>
     .pipe(imageMin())
     .pipe(dest("dist/images/raster"));
 
+const favicon = () =>
+  src("src/favicon/*")
+    .pipe(dest("dist/favicon"));
+
 export default series(parallel(templates, styles, fonts, svgoTask, svgSpriteTask, imageminTask), serverTask);
