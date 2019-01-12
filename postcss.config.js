@@ -7,7 +7,7 @@ module.exports = {
     "postcss-nested": {},
     "postcss-pseudo-class-enter": {},
     autoprefixer: {
-      browsers: ['last 4 version']
+      browsers: ["last 4 version"]
     },
     cssnano: {}
   }

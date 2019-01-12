@@ -12,5 +12,19 @@
 @import "../blocks/hand/hand.css";
 
 body {
-  background-image: linear-gradient(to left bottom, #00a0ff, #2b9cfb, #3d98f7, #4b94f3, #5690ef, #5e8deb, #6689e7, #6c86e3, #7382de, #787ed9, #7d7ad3, #8276ce);
+  background-image: linear-gradient(
+    to left bottom,
+    #00a0ff,
+    #2b9cfb,
+    #3d98f7,
+    #4b94f3,
+    #5690ef,
+    #5e8deb,
+    #6689e7,
+    #6c86e3,
+    #7382de,
+    #787ed9,
+    #7d7ad3,
+    #8276ce
+  );
 }
