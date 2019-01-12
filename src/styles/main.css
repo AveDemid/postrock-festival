@@ -9,34 +9,8 @@
 @import "../blocks/header/header.css";
 @import "../blocks/road-map/road-map.css";
 @import "../blocks/footer/footer.css";
+@import "../blocks/hand/hand.css";
 
 body {
   background-image: linear-gradient(to left bottom, #00a0ff, #2b9cfb, #3d98f7, #4b94f3, #5690ef, #5e8deb, #6689e7, #6c86e3, #7382de, #787ed9, #7d7ad3, #8276ce);
-}
-
-.hand {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  top: -10px;
-  left: -10px;
-  animation: rotate-hand 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-}
-
-@keyframes rotate-hand {
-  0% {
-    transform: rotate(-205deg);
-  }
-
-  25% {
-    transform: rotate(-260deg);
-  }
-
-  100% {
-    transform: rotate(-270deg);
-  }
-
-  to {
-    transform: rotate(-205deg);
-  }
 }
