@@ -41,7 +41,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
 
   &__item {
@@ -52,7 +51,7 @@
       /* Плавный градиент для последнего элемента, от белого к прозрачному */
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 4px;
         top: 11px;
@@ -60,13 +59,18 @@
         right: 0;
         margin: auto;
         height: calc(100% - 11px);
-        background: linear-gradient(to bottom, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0.3), rgba(225, 225, 225, 0));
+        background: linear-gradient(
+          to bottom,
+          rgba(225, 225, 225, 1),
+          rgba(225, 225, 225, 0.3),
+          rgba(225, 225, 225, 0)
+        );
       }
     }
 
     &:after {
       /* Кружочки */
-      content: '';
+      content: "";
       width: 8px;
       height: 8px;
       border-radius: 4px;
@@ -81,7 +85,7 @@
 
     &:before {
       /* Белая линия */
-      content: '';
+      content: "";
       position: absolute;
       background-color: rgba(225, 225, 225, 1);
       width: 4px;
@@ -99,20 +103,24 @@
       margin-top: -43px;
 
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         width: 4px;
         height: 100px;
         top: 0;
         left: -2px;
-        background: linear-gradient(to top, rgba(225, 225, 225, 1), rgba(225, 225, 225, 0.3), rgba(225, 225, 225, 0));
+        background: linear-gradient(
+          to top,
+          rgba(225, 225, 225, 1),
+          rgba(225, 225, 225, 0.3),
+          rgba(225, 225, 225, 0)
+        );
       }
 
       &:after {
         display: none;
       }
     }
-
 
     &--left {
       .time-line__musical-group-wrapper {
@@ -154,7 +162,6 @@
       transform: translate(-50%, 0);
     }
   }
-
 
   &__musical-group-wrapper {
     position: relative;
