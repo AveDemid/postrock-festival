@@ -1,16 +1,15 @@
 .road-map {
   display: flex;
   flex-direction: column;
-  align-items: center;
   overflow: hidden;
   margin-top: -2rem;
 }
 
 .time-line {
   &__header {
-    display: flex;
-    justify-content: center;
     margin-bottom: 3rem;
+    display: flex;
+    width: 100%;
   }
 
   &__stage {
@@ -21,16 +20,16 @@
     line-height: 56px;
     color: var(--white);
     text-transform: uppercase;
-    display: block;
-    margin: 0 40px;
-    width: 300px;
+    flex-basis: 50%;
 
     &--left {
       text-align: right;
+      margin-right: 40px;
     }
 
     &--right {
       text-align: left;
+      margin-left: 40px;
     }
   }
 
@@ -40,7 +39,6 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   &__item {
@@ -127,39 +125,40 @@
         visibility: hidden;
         opacity: 0;
         will-change: transform, opacity, visibility;
-        transition-property: transform, opacity;
+        transition-property: transform, opacity, visibility;
         transition-duration: 600ms;
-        transition-timing-function: ease-in-out;
+        transition-timing-function: ease-out;
         transform: translate(-100%, 0);
         padding-right: 40px;
         text-align: right;
       }
     }
 
+
     &--right {
       .time-line__musical-group-wrapper {
         visibility: hidden;
         opacity: 0;
         will-change: transform, opactity, visibility;
-        transition-property: transform, opacity;
+        transition-property: transform, opacity, visibility;
         transition-duration: 600ms;
-        transition-timing-function: ease-in-out;
-        transform: translate(100%, 0);
+        transition-timing-function: ease-out;
+        transform: translate(200%, 0);
         padding-left: 40px;
         text-align: left;
       }
     }
 
-    &--view.time-line__item--right .time-line__musical-group-wrapper {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(50%, 0);
-    }
-
     &--view.time-line__item--left .time-line__musical-group-wrapper {
       visibility: visible;
       opacity: 1;
-      transform: translate(-50%, 0);
+      transform: translate(0, 0);
+    }
+
+    &--view.time-line__item--right .time-line__musical-group-wrapper {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(100%, 0);
     }
   }
 
@@ -167,6 +166,7 @@
     position: relative;
     margin-top: -2px;
     padding-bottom: 1rem;
+    width: 50%;
   }
 
   &__time-performance {
