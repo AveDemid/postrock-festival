@@ -1,6 +1,7 @@
 /* Libraries */
 @import "bootstrap/dist/css/bootstrap-reboot.css";
 /* Common */
+@import "common/custom-media.css";
 @import "common/colors.css";
 @import "common/fonts.css";
 /* Common blocks */

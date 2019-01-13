@@ -1,16 +1,15 @@
 .road-map {
   display: flex;
   flex-direction: column;
-  align-items: center;
   overflow: hidden;
   margin-top: -2rem;
 }
 
 .time-line {
   &__header {
-    display: flex;
-    justify-content: center;
     margin-bottom: 3rem;
+    display: flex;
+    width: 100%;
   }
 
   &__stage {
@@ -21,16 +20,16 @@
     line-height: 56px;
     color: var(--white);
     text-transform: uppercase;
-    display: block;
-    margin: 0 40px;
-    width: 300px;
+    flex-basis: 50%;
 
     &--left {
       text-align: right;
+      margin-right: 40px;
     }
 
     &--right {
       text-align: left;
+      margin-left: 40px;
     }
   }
 
@@ -40,7 +39,6 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 
   &__item {
@@ -50,7 +48,7 @@
     &:last-child {
       /* Плавный градиент для последнего элемента, от белого к прозрачному */
 
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         width: 4px;
@@ -68,7 +66,7 @@
       }
     }
 
-    &:after {
+    &::after {
       /* Кружочки */
       content: "";
       width: 8px;
@@ -83,7 +81,7 @@
       margin: auto;
     }
 
-    &:before {
+    &::before {
       /* Белая линия */
       content: "";
       position: absolute;
@@ -102,7 +100,7 @@
       height: 100px;
       margin-top: -43px;
 
-      &:before {
+      &::before {
         content: "";
         position: absolute;
         width: 4px;
@@ -117,7 +115,7 @@
         );
       }
 
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -127,11 +125,12 @@
         visibility: hidden;
         opacity: 0;
         will-change: transform, opacity, visibility;
-        transition-property: transform, opacity;
+        transition-property: transform, opacity, visibility;
         transition-duration: 600ms;
-        transition-timing-function: ease-in-out;
+        transition-timing-function: ease-out;
         transform: translate(-100%, 0);
         padding-right: 40px;
+        padding-left: 20px;
         text-align: right;
       }
     }
@@ -141,25 +140,26 @@
         visibility: hidden;
         opacity: 0;
         will-change: transform, opactity, visibility;
-        transition-property: transform, opacity;
+        transition-property: transform, opacity, visibility;
         transition-duration: 600ms;
-        transition-timing-function: ease-in-out;
-        transform: translate(100%, 0);
+        transition-timing-function: ease-out;
+        transform: translate(200%, 0);
         padding-left: 40px;
+        padding-right: 20px;
         text-align: left;
       }
-    }
-
-    &--view.time-line__item--right .time-line__musical-group-wrapper {
-      visibility: visible;
-      opacity: 1;
-      transform: translate(50%, 0);
     }
 
     &--view.time-line__item--left .time-line__musical-group-wrapper {
       visibility: visible;
       opacity: 1;
-      transform: translate(-50%, 0);
+      transform: translate(0, 0);
+    }
+
+    &--view.time-line__item--right .time-line__musical-group-wrapper {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(100%, 0);
     }
   }
 
@@ -167,6 +167,7 @@
     position: relative;
     margin-top: -2px;
     padding-bottom: 1rem;
+    width: 50%;
   }
 
   &__time-performance {
@@ -207,9 +208,173 @@
   }
 
   &__mobile-stage {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 300;
     text-transform: uppercase;
-    color: var(--purple);
+    color: var(--white);
     display: none;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+@media (--l) {
+  .time-line {
+    &__header {
+      margin-bottom: 24px;
+    }
+
+    &__stage {
+      &--right {
+        margin-left: 24px;
+      }
+
+      &--left {
+        margin-right: 20px;
+      }
+    }
+
+    &__item {
+      &--right {
+        .time-line__musical-group-wrapper {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+      &--left {
+        .time-line__musical-group-wrapper {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (--m) {
+  .time-line {
+    &__item {
+      &--right {
+        .time-line__musical-group-wrapper {
+          padding-right: 60px;
+        }
+      }
+
+      &--left {
+        .time-line__musical-group-wrapper {
+          padding-left: 60px;
+        }
+      }
+    }
+  }
+}
+
+@media (--s) {
+  .road-map {
+    margin: 0;
+  }
+
+  .time-line {
+    &__list {
+      align-items: stretch;
+    }
+
+    &__stage {
+      display: none;
+    }
+
+    &__item {
+      &:last-child {
+        &::before {
+          left: 40px;
+          margin: 0;
+        }
+      }
+
+      &::before {
+        left: 40px;
+        margin: 0;
+      }
+
+      &::after {
+        left: 38px;
+        margin: 0;
+      }
+
+      &--view.time-line__item--right .time-line__musical-group-wrapper {
+        transform: translate(0, 0);
+      }
+    }
+
+    &__musical-group-wrapper {
+      width: 100%;
+    }
+
+    &__item {
+      &--left {
+        .time-line__musical-group-wrapper {
+          padding-left: 80px;
+          padding-right: 40px;
+          text-align: left;
+          transform: translate(100%, 0);
+        }
+      }
+
+      &--right {
+        .time-line__musical-group-wrapper {
+          padding-left: 80px;
+          padding-right: 40px;
+          text-align: left;
+          transform: translate(200%, 0);
+        }
+      }
+    }
+
+    &__mobile-stage {
+      display: block;
+    }
+  }
+}
+
+@media (--xs) {
+  .time-line {
+    &__item {
+      &:last-child {
+        &::before {
+          left: 20px;
+          margin: 0;
+        }
+      }
+
+      &::before {
+        left: 20px;
+        margin: 0;
+      }
+
+      &::after {
+        left: 17px;
+        margin: 0;
+      }
+    }
+
+    &__item {
+      &--left, &--right {
+        .time-line__musical-group-wrapper {
+          padding-left: 40px;
+          padding-right: 10px;
+        }
+      }
+    }
+
+    &__music-group {
+      font-size: 40px;
+    }
+
+    &__official-cite {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
   }
 }
