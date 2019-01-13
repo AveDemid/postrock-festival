@@ -80,7 +80,7 @@ const imageminTask = () =>
     .pipe(imageMin())
     .pipe(dest("dist/images/raster"));
 
-const favicon = () => src("src/images/favicon/*").pipe(dest("dist/favicon"));
+const favicon = () => src("src/favicon/**/*").pipe(dest("dist/favicon"));
 
 const webpack = cb => {
   const webpackConfig = {
