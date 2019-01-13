@@ -1,0 +1,13 @@
+/* Extra small devices, less then 576px */
+@custom-media --xs (max-width: 35.99875rem);
+
+/* Small devices, less then 768px*/
+@custom-media --s (max-width: 47.99875rem);
+
+/* Medium devices, less then 992px */
+@custom-media --m (max-width: 61.99875rem);
+
+/* Large devices, less then 1200px */
+@custom-media --l (max-width: 74.99875rem);
+
+/*  width: > 1200px without breakpoint */

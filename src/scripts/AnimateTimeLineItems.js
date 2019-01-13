@@ -1,4 +1,4 @@
-import {throttle} from "lodash";
+import { throttle } from "lodash";
 
 export class AnimateTimeLineItems {
   constructor(selector, modifier) {
@@ -27,8 +27,6 @@ export class AnimateTimeLineItems {
   }
 
   checkItems() {
-    console.log(1);
-
     this.list.forEach(item => {
       if (item.classList.contains(this.modifier)) {
         return;
