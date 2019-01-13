@@ -126,9 +126,9 @@
       .time-line__musical-group-wrapper {
         visibility: hidden;
         opacity: 0;
-        will-change: transform;
+        will-change: transform, opacity, visibility;
         transition-property: transform, opacity;
-        transition-duration: 1s;
+        transition-duration: 600ms;
         transition-timing-function: ease-in-out;
         transform: translate(-100%, 0);
         padding-right: 40px;
@@ -140,9 +140,9 @@
       .time-line__musical-group-wrapper {
         visibility: hidden;
         opacity: 0;
-        will-change: transform, opactity;
+        will-change: transform, opactity, visibility;
         transition-property: transform, opacity;
-        transition-duration: 1s;
+        transition-duration: 600ms;
         transition-timing-function: ease-in-out;
         transform: translate(100%, 0);
         padding-left: 40px;
