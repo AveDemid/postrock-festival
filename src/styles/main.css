@@ -11,8 +11,10 @@
 @import "../blocks/road-map/road-map.css";
 @import "../blocks/footer/footer.css";
 @import "../blocks/hand/hand.css";
+@import "../blocks/book-tickets/book-tickets.css";
 
 body {
+  scroll-behavior: smooth;
   background-image: linear-gradient(
     to left bottom,
     #00a0ff,
