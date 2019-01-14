@@ -21,6 +21,7 @@
     color: var(--white);
     text-transform: uppercase;
     flex-basis: 50%;
+    user-select: none;
 
     &--left {
       text-align: right;

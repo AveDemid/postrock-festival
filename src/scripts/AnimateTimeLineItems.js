@@ -45,4 +45,4 @@ setTimeout(() => {
   const list = new AnimateTimeLineItems(".time-line__item", "view");
 
   document.addEventListener("scroll", throttle(() => list.checkItems(), 500));
-}, 1000);
+}, 100);

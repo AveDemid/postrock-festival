@@ -1,1 +1,2 @@
 import "./AnimateTimeLineItems";
+import "./smoothScroll"
