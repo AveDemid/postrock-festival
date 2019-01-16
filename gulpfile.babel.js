@@ -1,4 +1,4 @@
-import { src, dest, watch, parallel, series } from "gulp";
+import {src, dest, watch, parallel, series} from "gulp";
 import browserSync from "browser-sync";
 import ejs from "gulp-ejs";
 import postcss from "gulp-postcss";
@@ -22,7 +22,7 @@ const serverTask = done => {
 // Templates
 const templates = () =>
   src("src/*.ejs")
-    .pipe(ejs({}, {}, { ext: ".html" }))
+    .pipe(ejs({}, {}, {ext: ".html"}))
     .pipe(dest("dist"))
     .pipe(server.stream());
 
@@ -68,7 +68,7 @@ const svgSpriteTask = () =>
         js2svg: {
           pretty: true
         },
-        plugins: [{ cleanupIDs: false }]
+        plugins: [{cleanupIDs: false}]
       })
     )
     .pipe(dest("dist/images"));
@@ -82,9 +82,9 @@ const imageminTask = () =>
 
 const favicon = () => src("src/favicon/**/*").pipe(dest("dist/favicon"));
 
-const webpack = cb => {
+const webpack = (cb) => {
   const webpackConfig = {
-    mode: "development",
+    mode: "production",
     watch: true,
     output: {
       filename: "bundle.js"
